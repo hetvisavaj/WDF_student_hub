@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Admin</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <div class="header-container">
+            <h2>StudentHub</h2>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <!-- <li><a href="register.html">Register</a></li>
+                    <li><a href="login.html">Login</a></li> -->
+                    <li><a href="assignment.html">Assignment</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin.html" class="active">Admin</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="login.html">Logout</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section aria-labelledby="admin-heading">
+            <h1 id="admin-heading">Administrator Console</h1>
+            <h2>Registered Portal Users</h2>
+            
+            <div class="table-wrapper">
+                <table>
+                    <caption>Active Accounts Overview</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">User ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Role</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>USR-01</strong></td>
+                            <td>Jane Student</td>
+                            <td><span class="role-badge role-student">Student</span></td>
+                            <td><button type="button" aria-label="Edit Jane Student">Edit</button></td>
+                        </tr>
+                        <tr>
+                            <td><strong>USR-02</strong></td>
+                            <td>Dr. Smith</td>
+                            <td><span class="role-badge role-faculty">Faculty</span></td>
+                            <td><button type="button" aria-label="Edit Dr. Smith">Edit</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 StudentHub Academic Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>

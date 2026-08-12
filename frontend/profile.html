@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Profile</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <div class="header-container">
+            <h2>StudentHub</h2>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="assignment.html">Assignment</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="profile.html" class="active">Profile</a></li>
+                    <li><a href="login.html">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="profile-card" aria-labelledby="profile-heading">
+            <h1 id="profile-heading">User Profile & Settings</h1>
+
+            <div class="profile-header-summary">
+                <div class="profile-avatar" aria-hidden="true">JS</div>
+                <div class="profile-summary-text">
+                    <h3>Jane Student</h3>
+                    <p>Undergraduate • Computer Science</p>
+                </div>
+            </div>
+
+            <form action="#" method="POST">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="profile-name">Full Name:</label>
+                            <input type="text" id="profile-name" name="name" value="Jane Student">
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-student-id">Student ID:</label>
+                            <input type="text" id="profile-student-id" name="student_id" value="STU-2026-88" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="profile-email">Email Address:</label>
+                            <input type="email" id="profile-email" name="email" value="jane.student@univ.edu">
+                        </div>
+                    </div>
+                </fieldset>
+                <button type="submit">Update Profile</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 StudentHub Academic Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>

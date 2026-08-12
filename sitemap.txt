@@ -1,0 +1,16 @@
+[StudentHub Portal]
+├── 1. Authentication
+│   ├── Page 01: Login Page (/login)
+│   └── Page 02: Registration & Password Reset Page (/register)
+├── 2. Core Dashboard
+│   └── Page 03: Central Dashboard (/dashboard)
+├── 3. Course Management
+│   ├── Page 04: Course Catalog & List Page (/courses)
+│   └── Page 05: Course Detail & Announcements Page (/courses/:id)
+├── 4. Assignment & Grading
+│   ├── Page 06: Assignment List & Calendar Page (/assignments)
+│   ├── Page 07: Assignment Detail & Submission Page (/assignments/:id)
+│   └── Page 08: Gradebook & Analytics Page (/gradebook)
+└── 5. Administration & Profile
+    ├── Page 09: User Management Page [Admin] (/admin/users)
+    └── Page 10: User Profile & Settings Page (/profile)
