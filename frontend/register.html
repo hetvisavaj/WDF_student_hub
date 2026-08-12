@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h2>StudentHub</h2>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="register.html" class="active">Register</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="register-card">
+            <h1>Create an Account</h1>
+            <!-- action redirects directly to login.html using pure HTML -->
+            <form action="login.html" method="GET">
+                <div class="form-group">
+                    <label for="reg-fullname">Full Name:</label>
+                    <input type="text" id="reg-fullname" name="fullname" placeholder="e.g., Jane Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-email">Academic Email:</label>
+                    <input type="email" id="reg-email" name="email" placeholder="student@univ.edu" required>
+                </div>
+                <div class="form-group">
+                    <label for="reg-role">Role:</label>
+                    <select id="reg-role" name="role" required>
+                        <option value="">Select Role</option>
+                        <option value="student">Student</option>
+                        <option value="faculty">Faculty</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="reg-password">Password:</label>
+                    <input type="password" id="reg-password" name="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit">Register Account</button>
+            </form>
+            <div class="register-footer">
+                Already have an account? <a href="login.html">Sign in here</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 StudentHub Academic Portal. All rights reserved.</p>
+    </footer>
+</body>
+</html>
