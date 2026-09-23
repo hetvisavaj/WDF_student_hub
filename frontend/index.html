@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,49 +7,156 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- 1. Notification Banner -->
+    <aside id="announcement-banner" class="notification-banner" role="region" aria-label="Campus Alert">
+        <div class="banner-content">
+            <span>📢 <strong>Notice:</strong> Fall 2026 course registration opens next Monday. Verify your prerequisites early!</span>
+            <button id="banner-close-btn" class="banner-close" aria-label="Dismiss announcement">&times;</button>
+        </div>
+    </aside>
+
     <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <header class="main-header">
-    <div class="header-container">
+        <div class="header-container">
+            <h2>StudentHub</h2>
 
-        <h2>StudentHub</h2>
+            <div class="header-actions">
+                <!-- 2. Theme Toggle Switcher -->
+                <button id="theme-toggle-btn" class="btn-icon" aria-label="Switch between light and dark mode">🌙</button>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
+                <!-- 3. Hamburger Menu Button -->
+                <button id="hamburger-btn" class="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+
+            <nav id="main-nav" class="nav-menu" aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="assignment.html">Assignment</a></li>
                     <li><a href="events.html">Events</a></li>
                     <li><a href="contact.html">Contact</a></li>
                     <li><a href="admin.html">Admin</a></li>
                     <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="profile.html" class="active">Profile</a></li>
+                    <li><a href="profile.html">Profile</a></li>
                     <li><a href="login.html">Logout</a></li>
-            </ul>
-        </nav>
-
-    </div>
-</header>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <main id="main-content">
+        <!-- Hero Section with Quick Action opening the Modal -->
         <section class="home-container" aria-labelledby="home-heading">
             <header class="hero-banner">
                 <h1 id="home-heading">Welcome to StudentHub</h1>
                 <p>Your central portal for campus updates, events, and academic tools.</p>
                 <div class="hero-actions">
-                    <a href="dashboard.html" class="btn-primary">Go to Dashboard</a>
+                    <!-- 4. Modal Popup Trigger -->
+                    <button id="open-modal-btn" class="btn-primary">Quick Advisor Inquiry</button>
                     <a href="events.html" class="btn-secondary">View Campus Events</a>
                 </div>
             </header>
 
-            <article class="announcement-card">
-                <h2>📢 Latest Announcements</h2>
-                <p>Fall course registration opens next week. Please check your dashboard for eligibility details.</p>
-            </article>
+            <!-- 5. Content / Image Slider -->
+            <section class="slider-section" aria-roledescription="carousel" aria-label="Campus Highlights">
+                <h2>Campus Highlights</h2>
+                <div class="slider-container">
+                    <div class="slider-wrapper" id="slider-wrapper">
+                        <article class="slide active">
+                            <div class="slide-content">
+                                <h3>💡 Innovation Lab Workshops</h3>
+                                <p>Hands-on AI and robotics bootcamps hosted every Friday afternoon.</p>
+                            </div>
+                        </article>
+                        <article class="slide">
+                            <div class="slide-content">
+                                <h3>📚 Extended Library Hours</h3>
+                                <p>The main library is now open 24/7 through midterm assessment weeks.</p>
+                            </div>
+                        </article>
+                        <article class="slide">
+                            <div class="slide-content">
+                                <h3>🏆 Annual Hackathon 2026</h3>
+                                <p>Over $10,000 in project grants up for grabs. Registration ends Nov 1st.</p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <button class="slider-btn prev" id="slider-prev" aria-label="Previous slide">&#10094;</button>
+                    <button class="slider-btn next" id="slider-next" aria-label="Next slide">&#10095;</button>
+
+                    <div class="slider-indicators" id="slider-dots"></div>
+                </div>
+            </section>
+
+            <!-- 6. Collapsible FAQ Accordion -->
+            <section class="faq-accordion-section" aria-labelledby="faq-title">
+                <h2 id="faq-title">Frequently Asked Questions</h2>
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-trigger" aria-expanded="false" id="faq-q1" aria-controls="faq-a1">
+                            <span>How do I change or reset my portal password?</span>
+                            <span class="icon" aria-hidden="true">+</span>
+                        </button>
+                        <div id="faq-a1" class="accordion-content" role="region" aria-labelledby="faq-q1" hidden>
+                            <p>Head to the Login page, choose "Forgot Password", and follow the verification sent to your registered academic email address.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-trigger" aria-expanded="false" id="faq-q2" aria-controls="faq-a2">
+                            <span>Where do I submit term assignments?</span>
+                            <span class="icon" aria-hidden="true">+</span>
+                        </button>
+                        <div id="faq-a2" class="accordion-content" role="region" aria-labelledby="faq-q2" hidden>
+                            <p>Navigate to the Assignments tab, locate the active card, select your file, and click "Submit File".</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-trigger" aria-expanded="false" id="faq-q3" aria-controls="faq-a3">
+                            <span>How do I RSVP for university events?</span>
+                            <span class="icon" aria-hidden="true">+</span>
+                        </button>
+                        <div id="faq-a3" class="accordion-content" role="region" aria-labelledby="faq-q3" hidden>
+                            <p>Go to the Events tab, locate your preferred session, and select the RSVP link to reserve a seat.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </section>
     </main>
+
+    <!-- Modal Popup Element -->
+    <div id="advisor-modal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 id="modal-title">Ask Academic Support</h3>
+                <button id="close-modal-btn" class="modal-close" aria-label="Close dialog">&times;</button>
+            </div>
+            <form id="advisor-form" class="modal-body">
+                <div class="form-group">
+                    <label for="student-query">Your Question or Topic:</label>
+                    <textarea id="student-query" rows="4" required placeholder="Type your inquiry here..."></textarea>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="cancel-modal-btn" class="btn-secondary">Cancel</button>
+                    <button type="submit" class="btn-primary">Send Inquiry</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2026 StudentHub Academic Portal. All rights reserved.</p>
     </footer>
+
+    <!-- App Scripts -->
+    <script src="app.js"></script>
 </body>
 </html>
