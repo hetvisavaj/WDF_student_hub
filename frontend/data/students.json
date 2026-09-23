@@ -1,0 +1,30 @@
+[
+  {
+    "id": "STU-101",
+    "name": "Aarav Sharma",
+    "program": "B.Tech Computer Science",
+    "year": "2nd Year",
+    "status": "Active"
+  },
+  {
+    "id": "STU-102",
+    "name": "Priya Nair",
+    "program": "B.Tech Information Technology",
+    "year": "3rd Year",
+    "status": "Active"
+  },
+  {
+    "id": "STU-103",
+    "name": "Rohan Mehta",
+    "program": "B.Tech Electronics",
+    "year": "1st Year",
+    "status": "Pending"
+  },
+  {
+    "id": "STU-104",
+    "name": "Sneha Verma",
+    "program": "B.Tech Mechanical",
+    "year": "4th Year",
+    "status": "Active"
+  }
+]

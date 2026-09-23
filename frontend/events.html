@@ -30,47 +30,40 @@
     <main id="main-content">
         <section class="events-container" aria-labelledby="events-heading">
             <h1 id="events-heading">Campus Events Calendar</h1>
-            
-            <div class="events-list">
-                <!-- Event 1 -->
-                <article class="event-card">
-                    <div class="event-date-badge" aria-hidden="true">
-                        <span class="month">Nov</span>
-                        <span class="day">10</span>
-                    </div>
-                    <div class="event-content">
-                        <h2>Annual University Tech Hackathon</h2>
-                        <p class="event-meta">
-                            <span>📅 <time datetime="2026-11-10">November 10, 2026</time></span>
-                            <span>• 📍 Student Center Auditorium</span>
-                        </p>
-                        <p class="event-description">Join us for 24 hours of coding, workshops, and networking.</p>
-                        <a href="register.html" class="btn-register">RSVP / Register</a>
-                    </div>
-                </article>
 
-                <!-- Event 2 -->
-                <article class="event-card">
-                    <div class="event-date-badge" aria-hidden="true">
-                        <span class="month">Dec</span>
-                        <span class="day">01</span>
-                    </div>
-                    <div class="event-content">
-                        <h2>Career & Internship Fair</h2>
-                        <p class="event-meta">
-                            <span>📅 <time datetime="2026-12-01">December 1, 2026</time></span>
-                            <span>• 📍 University Gymnasium</span>
-                        </p>
-                        <p class="event-description">Connect with leading engineering and software companies.</p>
-                        <a href="register.html" class="btn-register">RSVP / Register</a>
-                    </div>
-                </article>
+            <div class="data-toolbar">
+                <label class="search-box">
+                    <span class="sr-only">Search events</span>
+                    <input type="search" id="event-search" placeholder="Search events..." aria-label="Search events">
+                </label>
+
+                <label class="filter-box">
+                    <span>Category</span>
+                    <select id="event-category-filter" aria-label="Filter events by category">
+                        <option value="all">All Categories</option>
+                    </select>
+                </label>
+
+                <label class="sort-box">
+                    <span>Sort by</span>
+                    <select id="event-sort" aria-label="Sort events">
+                        <option value="date-asc">Date: Earliest</option>
+                        <option value="date-desc">Date: Latest</option>
+                        <option value="title-asc">Title: A-Z</option>
+                    </select>
+                </label>
             </div>
+
+            <div id="events-list" class="events-list" aria-live="polite"></div>
+
+            <div class="pagination" id="event-pagination" aria-label="Event pagination"></div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 StudentHub Academic Portal. All rights reserved.</p>
     </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>

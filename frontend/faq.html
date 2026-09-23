@@ -26,43 +26,42 @@
             </nav>
         </div>
     </header>
-    <div class="faq-list">
-
-    <section class="faq-container" aria-labelledby="faq-heading">
+    <main id="main-content">
+        <section class="faq-container" aria-labelledby="faq-heading">
             <h1 id="faq-heading">Frequently Asked Questions</h1>
-    <details class="faq-item">
-        <summary>How do I reset my portal password?</summary>
-        <p>
-            Navigate to the Login page and select "Forgot Password" to receive
-            a password reset link at your registered email.
-        </p>
-    </details>
 
-    <details class="faq-item">
-        <summary>Where can I check assignment feedback?</summary>
-        
-        <p>
-            Visit your Gradebook section via the Student Dashboard to view
-            scores and rubric evaluations.
-        </p>
-    </details>
-    <details class="faq-item">
-        <summary>How can I register for an event?</summary>
-        <p>
-            Go to the Events page, select the event you want to attend,
-            and click the Register button.
-        </p>
-    </details>
-    <details class="faq-item">
-        <summary>How do I update my student profile?</summary>
-        <p>
-            Open the Profile page and select Edit Profile to update your
-            personal and academic information.
-        </p>
-    </details>
-</div>
+            <div class="data-toolbar faq-toolbar">
+                <label class="search-box">
+                    <span class="sr-only">Search FAQs</span>
+                    <input type="search" id="faq-search" placeholder="Search FAQ..." aria-label="Search FAQ">
+                </label>
+
+                <label class="filter-box">
+                    <span>Category</span>
+                    <select id="faq-category-filter" aria-label="Filter FAQs by category">
+                        <option value="all">All Topics</option>
+                    </select>
+                </label>
+
+                <label class="sort-box">
+                    <span>Sort by</span>
+                    <select id="faq-sort" aria-label="Sort FAQs">
+                        <option value="id-asc">Default order</option>
+                        <option value="question-asc">Question: A-Z</option>
+                        <option value="category-asc">Category: A-Z</option>
+                    </select>
+                </label>
+            </div>
+
+            <div id="faq-list" class="faq-list" aria-live="polite"></div>
+            <div id="faq-pagination" class="pagination" aria-label="FAQ pagination"></div>
+        </section>
+    </main>
+
     <footer>
         <p>&copy; 2026 StudentHub Academic Portal. All rights reserved.</p>
     </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>

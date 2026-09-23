@@ -212,16 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             isCourseValid && isYearValid && isGenderValid && isTermsValid;
 
         if (isFormValid) {
-            successBanner.style.display = 'block';
-            form.reset();
-
-            // Clear visual green borders
-            document.querySelectorAll('.valid').forEach(el => el.classList.remove('valid'));
-
-            // Redirect after 2 seconds
-            setTimeout(() => {
-                window.location.href = 'login.html';
-            }, 2000);
+            form.submit();
         } else {
             // Scroll to the first invalid field
             const firstInvalid = form.querySelector('.invalid, input:invalid');

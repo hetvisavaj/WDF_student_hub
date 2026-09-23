@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "question": " my portal password?",
+    "answer": "Navigate to the Login page and choose the Forgot Password option to receive a reset link on your registered email.",
+    "category": "Account"
+  },
+  {
+    "id": 2,
+    "question": "Where can I check assignment feedback?",
+    "answer": "Visit your Student Dashboard or Gradebook section to view marks, comments, and rubric feedback from faculty.",
+    "category": "Academics"
+  },
+  {
+    "id": 3,
+    "question": "How can I register for an event?",
+    "answer": "Go to the Events page, select the event you want to join, and click the registration button to reserve your seat.",
+    "category": "Events"
+  },
+  {
+    "id": 4,
+    "question": "How do I update my student profile?",
+    "answer": "Open the Profile page and select Edit Profile to update your personal information, contact details, and academic record.",
+    "category": "Profile"
+  },
+  {
+    "id": 5,
+    "question": "Can I download course materials from the portal?",
+    "answer": "Yes. Faculty-uploaded study resources, notes, and lecture files are usually available in the Assignment or Course section.",
+    "category": "Academics"
+  },
+  {
+    "id": 6,
+    "question": "Who should I contact for technical support?",
+    "answer": "Use the Contact page or the IT support desk details listed in the portal to report system issues or login problems.",
+    "category": "Support"
+  }
+]

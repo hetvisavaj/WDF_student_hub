@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Annual University Tech Hackathon",
+    "date": "2026-11-10",
+    "category": "Workshop",
+    "location": "Student Center Auditorium",
+    "description": "Join us for 24 hours of coding, workshops, and networking with industry mentors.",
+    "registerLink": "register.html"
+  },
+  {
+    "id": 2,
+    "title": "Career & Internship Fair",
+    "date": "2026-12-01",
+    "category": "Career",
+    "location": "University Gymnasium",
+    "description": "Connect with leading engineering and software companies for internships and placements.",
+    "registerLink": "register.html"
+  },
+  {
+    "id": 3,
+    "title": "AI Research Symposium",
+    "date": "2026-12-15",
+    "category": "Seminar",
+    "location": "Innovation Hall",
+    "description": "Explore artificial intelligence trends, local student projects, and demo presentations.",
+    "registerLink": "register.html"
+  },
+  {
+    "id": 4,
+    "title": "Green Campus Cleanup Drive",
+    "date": "2027-01-08",
+    "category": "Community",
+    "location": "Main Campus Lawn",
+    "description": "Volunteer for a sustainability initiative and help keep the campus clean and green.",
+    "registerLink": "register.html"
+  },
+  {
+    "id": 5,
+    "title": "Startup Pitch Competition",
+    "date": "2027-02-04",
+    "category": "Competition",
+    "location": "Business Block Stage",
+    "description": "Watch students pitch startup ideas to faculty judges and investors in a live event.",
+    "registerLink": "register.html"
+  },
+  {
+    "id": 6,
+    "title": "Placement Preparation Bootcamp",
+    "date": "2027-02-19",
+    "category": "Career",
+    "location": "Learning Resource Center",
+    "description": "Prepare for interviews, aptitude tests, and technical rounds with expert trainer sessions.",
+    "registerLink": "register.html"
+  }
+]
