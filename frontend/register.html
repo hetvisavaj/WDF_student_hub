@@ -73,7 +73,7 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="register.html" class="active">Register</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="http://localhost/PRACTICAL/login.php">Login</a></li>
                 </ul>
             </nav>
         </div>
@@ -87,8 +87,21 @@
                 Registration successful! Redirecting to login...
             </div>
 
-            <form id="registration-form" novalidate action="http://localhost/PRACTICAL-7/index.php" method="post">
+            <form id="registration-form" novalidate action="http://localhost/PRACTICAL/register_user.php" method="post">
                 <!-- Full Name -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="reg-username">Username:</label>
+                        <input type="text" id="reg-username" name="username" placeholder="e.g., janedoe26">
+                        <span class="error-message" id="username-error"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-student-id">Student ID:</label>
+                        <input type="text" id="reg-student-id" name="student_id" placeholder="e.g., STU-2026-001">
+                        <span class="error-message" id="student-id-error"></span>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="reg-name">Full Name:</label>
                     <input type="text" id="reg-name" name="fullname" placeholder="e.g., Jane Doe">
@@ -126,16 +139,16 @@
                 <!-- Course & Year -->
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="reg-course">Course / Department:</label>
-                        <select id="reg-course" name="course">
-                            <option value="">Select Course</option>
+                        <label for="reg-department">Department:</label>
+                        <select id="reg-department" name="department">
+                            <option value="">Select Department</option>
                             <option value="Computer Engineering">Computer Engineering</option>
                             <option value="Information Technology">Information Technology</option>
                             <option value="Electrical Engineering">Electrical Engineering</option>
                             <option value="Mechanical Engineering">Mechanical Engineering</option>
                             <option value="Civil Engineering">Civil Engineering</option>
                         </select>
-                        <span class="error-message" id="course-error"></span>
+                        <span class="error-message" id="department-error"></span>
                     </div>
                     <div class="form-group">
                         <label for="reg-year">Year of Study:</label>
@@ -180,7 +193,7 @@
             </form>
 
             <div class="register-footer">
-                Already have an account? <a href="login.html">Sign in here</a>
+                Already have an account? <a href="http://localhost/PRACTICAL/login.php">Sign in here</a>
             </div>
         </section>
     </main>

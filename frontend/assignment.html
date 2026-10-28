@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +7,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header>
         <div class="header-container">
             <h2>StudentHub</h2>
-            <nav aria-label="Main Navigation">
+            <div class="header-actions">
+                <button id="theme-toggle-btn" class="btn-icon"
+                        aria-label="Switch between light and dark mode">🌙</button>
+                <button id="hamburger-btn" class="hamburger-btn"
+                        aria-label="Toggle navigation menu" aria-expanded="false"
+                        aria-controls="main-nav">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+            <nav id="main-nav" class="nav-menu" aria-label="Main Navigation">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
@@ -25,53 +38,73 @@
             </nav>
         </div>
     </header>
-    <main>
-        <section class="assignments-container">
-            <h1>Course Assignments</h1>
+
+    <main id="main-content">
+        <section class="assignments-container" aria-labelledby="assignments-heading">
+            <h1 id="assignments-heading">Course Assignments</h1>
+            <p>Submit your assignment details and track your academic work in StudentHub.</p>
+
             <div class="assignments-list">
-                <!-- Pending Assignment 1 -->
                 <article class="assignment-card">
                     <div class="assignment-info">
-                        <span class="course-tag">DBMS 101 — Database Management Systems</span>
-                        <h2>DBMS Assignment 1</h2>
-                        <p class="assignment-meta">⏳ Due Date: Nov 15, 2026</p>
+                        <span class="course-tag">Academic Portal</span>
+                        <h2>Add an Assignment</h2>
+                        <p class="assignment-meta">Your submission will be saved securely in the assignment database.</p>
                     </div>
-                    <form class="upload-form" action="assignments.html" method="GET">
-                        <input type="file" class="file-input" required>
-                        <button type="submit" class="btn-submit">Submit File</button>
-                    </form>
-                </article>
-
-                <!-- Pending Assignment 2 -->
-                <article class="assignment-card">
-                    <div class="assignment-info">
-                        <span class="course-tag">Web Dev A1 — Web Development Principles</span>
-                        <h2>Web Dev Project Proposal</h2>
-                        <p class="assignment-meta">⏳ Due Date: Nov 20, 2026</p>
-                    </div>
-                    <form class="upload-form" action="assignments.html" method="GET">
-                        <input type="file" class="file-input" required>
-                        <button type="submit" class="btn-submit">Submit File</button>
-                    </form>
-                </article>
-
-                <!-- Completed Assignment -->
-                <article class="assignment-card">
-                    <div class="assignment-info">
-                        <span class="course-tag">DBMS 101 — Database Management Systems</span>
-                        <h2>SQL Query Optimization Lab</h2>
-                        <p class="assignment-meta" style="color: var(--text-muted);">Submitted on: Oct 28, 2026</p>
-                    </div>
-                    <div>
-                        <span class="status-submitted">✓ Completed</span>
-                    </div>
+                    <span class="status-submitted">Database connected</span>
                 </article>
             </div>
+
+            <section class="event-registration" aria-labelledby="form-heading">
+                <h2 id="form-heading">Assignment Submission Form</h2>
+                <form action="http://localhost/PRACTICAL/assignments.php" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="student-id">Student ID:</label>
+                            <input type="text" id="student-id" name="student_id"
+                                   placeholder="e.g., STU-2026-001"
+                                   pattern="[A-Za-z0-9-]{3,30}" maxlength="30" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="course-name">Course Name:</label>
+                            <input type="text" id="course-name" name="course_name"
+                                   placeholder="e.g., Database Management Systems"
+                                   maxlength="100" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="assignment-title">Assignment Title:</label>
+                        <input type="text" id="assignment-title" name="assignment_title"
+                               placeholder="Enter the assignment title"
+                               maxlength="150" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="due-date">Due Date:</label>
+                            <input type="date" id="due-date" name="due_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Status:</label>
+                            <select id="status" name="status" required>
+                                <option value="Pending">Pending</option>
+                                <option value="Submitted">Submitted</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit">Save Assignment</button>
+                </form>
+                <p><a class="btn-secondary" href="http://localhost/PRACTICAL/assignments.php">View Saved Assignments</a></p>
+            </section>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 StudentHub Academic Portal. All rights reserved.</p>
     </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>

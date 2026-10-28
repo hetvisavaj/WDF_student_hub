@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "C:/laragon/www/PRACTICAL"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../../../../INTERNSHIP 2025/Voice assistance"
+		},
+		{
+			"path": "../PRACTICAL-7"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "frontend"
+	}
+}

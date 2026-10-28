@@ -2,12 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('registration-form');
 
     // Input elements
+    const usernameInput = document.getElementById('reg-username');
+    const studentIdInput = document.getElementById('reg-student-id');
     const nameInput = document.getElementById('reg-name');
     const emailInput = document.getElementById('reg-email');
     const mobileInput = document.getElementById('reg-mobile');
     const passwordInput = document.getElementById('reg-password');
     const confirmPasswordInput = document.getElementById('reg-confirm-password');
-    const courseSelect = document.getElementById('reg-course');
+    const departmentSelect = document.getElementById('reg-department');
     const yearSelect = document.getElementById('reg-year');
     const genderInputs = document.querySelectorAll('input[name="gender"]');
     const termsCheckbox = document.getElementById('reg-terms');
@@ -17,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const regexPatterns = {
         // Name: Letters, spaces, min 3, max 50 chars
         name: /^[a-zA-Z\s]{3,50}$/,
+
+        username: /^[a-zA-Z0-9_]{3,30}$/,
+        studentId: /^[a-zA-Z0-9-]{3,30}$/,
         
         // Email: Standard RFC-compliant format
         email: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
@@ -28,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
         
         // Course & Year: Non-empty selection check
-        course: /^.+$/,
+        department: /^.+$/,
         year: /^[1-4]$/
     };
 
@@ -56,6 +61,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Individual Validation Functions
+    function validateUsername() {
+        const value = usernameInput.value.trim();
+        if (!value) {
+            showError(usernameInput, 'username-error', 'Username is required.');
+            return false;
+        }
+        if (!regexPatterns.username.test(value)) {
+            showError(usernameInput, 'username-error', 'Use 3-30 letters, numbers, or underscores.');
+            return false;
+        }
+        clearError(usernameInput, 'username-error');
+        return true;
+    }
+
+    function validateStudentId() {
+        const value = studentIdInput.value.trim();
+        if (!value) {
+            showError(studentIdInput, 'student-id-error', 'Student ID is required.');
+            return false;
+        }
+        if (!regexPatterns.studentId.test(value)) {
+            showError(studentIdInput, 'student-id-error', 'Use 3-30 letters, numbers, or hyphens.');
+            return false;
+        }
+        clearError(studentIdInput, 'student-id-error');
+        return true;
+    }
+
     function validateName() {
         const value = nameInput.value.trim();
         if (!value) {
@@ -126,13 +159,13 @@ document.addEventListener('DOMContentLoaded', () => {
         return true;
     }
 
-    function validateCourse() {
-        const value = courseSelect.value;
-        if (!regexPatterns.course.test(value)) {
-            showError(courseSelect, 'course-error', 'Please select a course.');
+    function validateDepartment() {
+        const value = departmentSelect.value;
+        if (!regexPatterns.department.test(value)) {
+            showError(departmentSelect, 'department-error', 'Please select a department.');
             return false;
         }
-        clearError(courseSelect, 'course-error');
+        clearError(departmentSelect, 'department-error');
         return true;
     }
 
@@ -168,6 +201,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Real-time / Blur event listeners
+    usernameInput.addEventListener('blur', validateUsername);
+    usernameInput.addEventListener('input', () => { if (usernameInput.classList.contains('invalid')) validateUsername(); });
+
+    studentIdInput.addEventListener('blur', validateStudentId);
+    studentIdInput.addEventListener('input', () => { if (studentIdInput.classList.contains('invalid')) validateStudentId(); });
+
     nameInput.addEventListener('blur', validateName);
     nameInput.addEventListener('input', () => { if (nameInput.classList.contains('invalid')) validateName(); });
 
@@ -186,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
     confirmPasswordInput.addEventListener('blur', validateConfirmPassword);
     confirmPasswordInput.addEventListener('input', () => { if (confirmPasswordInput.classList.contains('invalid')) validateConfirmPassword(); });
 
-    courseSelect.addEventListener('change', validateCourse);
+    departmentSelect.addEventListener('change', validateDepartment);
     yearSelect.addEventListener('change', validateYear);
 
     genderInputs.forEach(radio => radio.addEventListener('change', validateGender));
@@ -197,19 +236,21 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         // Run all validators
+        const isUsernameValid = validateUsername();
+        const isStudentIdValid = validateStudentId();
         const isNameValid = validateName();
         const isEmailValid = validateEmail();
         const isMobileValid = validateMobile();
         const isPasswordValid = validatePassword();
         const isConfirmPasswordValid = validateConfirmPassword();
-        const isCourseValid = validateCourse();
+        const isDepartmentValid = validateDepartment();
         const isYearValid = validateYear();
         const isGenderValid = validateGender();
         const isTermsValid = validateTerms();
 
-        const isFormValid = isNameValid && isEmailValid && isMobileValid &&
+        const isFormValid = isUsernameValid && isStudentIdValid && isNameValid && isEmailValid && isMobileValid &&
                             isPasswordValid && isConfirmPasswordValid &&
-                            isCourseValid && isYearValid && isGenderValid && isTermsValid;
+                    isDepartmentValid && isYearValid && isGenderValid && isTermsValid;
 
         if (isFormValid) {
             form.submit();

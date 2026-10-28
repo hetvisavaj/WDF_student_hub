@@ -236,15 +236,26 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const fetchJson = async (url) => {
+    const fetchJson = async (url, cacheKey = `hub-cache:${url}`) => {
         try {
             const response = await fetch(url);
             if (!response.ok) {
                 throw new Error(`Request failed: ${response.status}`);
             }
-            return await response.json();
+            const data = await response.json();
+            localStorage.setItem(cacheKey, JSON.stringify({ savedAt: Date.now(), data }));
+            return data;
         } catch (error) {
             console.error(`Error loading ${url}:`, error);
+            const cached = localStorage.getItem(cacheKey);
+            if (cached) {
+                try {
+                    console.warn(`Using cached data for ${url}.`);
+                    return JSON.parse(cached).data;
+                } catch (cacheError) {
+                    localStorage.removeItem(cacheKey);
+                }
+            }
             throw error;
         }
     };
@@ -295,11 +306,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
-        fetchJson('data/events.json').then((events) => {
+        fetchJson('http://localhost/PRACTICAL/events_api.php').then((events) => {
             allEvents = events;
             const categories = [...new Set(events.map(item => item.category))];
 
             categories.forEach(category => {
+                if (eventCategoryFilter.querySelector(`option[value="${category}"]`)) {
+                    return;
+                }
                 const option = document.createElement('option');
                 option.value = category;
                 option.textContent = category;
@@ -383,7 +397,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             updateFaqView();
         }).catch(() => {
-            faqList.innerHTML = '<div class="empty-state">Unable to load FAQs. Open this page through a local web server, not directly as a file.</div>';
+            if (!faqList.children.length) {
+                faqList.innerHTML = '<div class="empty-state">Unable to load FAQs. Open this page through a local web server, not directly as a file.</div>';
+            }
             faqPagination.innerHTML = '';
         });
 
@@ -402,4 +418,72 @@ document.addEventListener('DOMContentLoaded', () => {
             updateFaqView();
         });
     }
+
+    const studentList = document.getElementById('student-list');
+    const studentSearch = document.getElementById('student-search');
+    const studentStatusFilter = document.getElementById('student-status-filter');
+    const studentSort = document.getElementById('student-sort');
+    const studentPagination = document.getElementById('student-pagination');
+
+    if (studentList && studentSearch && studentStatusFilter && studentSort && studentPagination) {
+        let allStudents = [];
+        let studentPage = 1;
+        const perPage = 5;
+
+        const updateStudentView = () => {
+            const searchText = studentSearch.value.trim().toLowerCase();
+            const status = studentStatusFilter.value;
+            const sortValue = studentSort.value;
+            const filteredStudents = allStudents
+                .filter((student) => {
+                    const matchesSearch = [student.id, student.name, student.program, student.year]
+                        .some(value => value.toLowerCase().includes(searchText));
+                    return matchesSearch && (status === 'all' || student.status === status);
+                })
+                .sort((a, b) => {
+                    if (sortValue === 'name-asc') return a.name.localeCompare(b.name);
+                    if (sortValue === 'year-asc') return a.year.localeCompare(b.year);
+                    return a.id.localeCompare(b.id);
+                });
+
+            const totalPages = Math.max(1, Math.ceil(filteredStudents.length / perPage));
+            studentPage = Math.min(studentPage, totalPages);
+            const currentStudents = paginate(filteredStudents, studentPage, perPage);
+
+            studentList.innerHTML = currentStudents.length
+                ? currentStudents.map(student => `
+                    <tr>
+                        <td><strong>${student.id}</strong></td>
+                        <td>${student.name}</td>
+                        <td>${student.program}</td>
+                        <td>${student.year}</td>
+                        <td><span class="role-badge ${student.status === 'Active' ? 'role-student' : 'role-faculty'}">${student.status}</span></td>
+                    </tr>
+                `).join('')
+                : '<tr><td colspan="5" class="empty-state">No students match your search.</td></tr>';
+
+            createPaginationButtons(studentPagination, studentPage, totalPages, (page) => {
+                studentPage = page;
+                updateStudentView();
+            });
+        };
+
+        fetchJson('data/students.json').then((students) => {
+            allStudents = students;
+            [...new Set(students.map(student => student.status))].forEach(status => {
+                const option = document.createElement('option');
+                option.value = status;
+                option.textContent = status;
+                studentStatusFilter.appendChild(option);
+            });
+            updateStudentView();
+        }).catch(() => {
+            studentList.innerHTML = '<tr><td colspan="5" class="empty-state">Unable to load students. Open this page through a local web server.</td></tr>';
+        });
+
+        studentSearch.addEventListener('input', () => { studentPage = 1; updateStudentView(); });
+        studentStatusFilter.addEventListener('change', () => { studentPage = 1; updateStudentView(); });
+        studentSort.addEventListener('change', () => { studentPage = 1; updateStudentView(); });
+    }
+
 });

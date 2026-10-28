@@ -52,5 +52,86 @@
     "location": "Learning Resource Center",
     "description": "Prepare for interviews, aptitude tests, and technical rounds with expert trainer sessions.",
     "registerLink": "register.html"
+  },
+  {
+    "id": 7,
+    "title": "Open Source Contribution Day",
+    "date": "2027-02-28",
+    "category": "Workshop",
+    "location": "Computer Science Lab 2",
+    "description": "Learn Git workflows and make your first contribution to a collaborative open source project.",
+    "registerLink": "register.html"
+  },
+  {
+    "id": 8,
+    "title": "Intercollege Coding Contest",
+    "date": "2027-03-12",
+    "category": "Competition",
+    "location": "Engineering Block",
+    "description": "Test your problem-solving skills in a timed programming contest with teams from nearby colleges.",
+    "registerLink": "register.html"
+  },
+  {
+    "id": 9,
+    "title": "Women in Technology Panel",
+    "date": "2027-03-20",
+    "category": "Seminar",
+    "location": "Main Auditorium",
+    "description": "Hear technology leaders share practical advice about careers, mentorship, and inclusive workplaces.",
+    "registerLink": "register.html"
+  },
+  {
+    "id": 10,
+    "title": "Alumni Networking Evening",
+    "date": "2027-04-02",
+    "category": "Career",
+    "location": "Alumni Hall",
+    "description": "Meet graduates working across technology, design, business, and public service.",
+    "registerLink": "register.html"
+  },
+  {
+    "id": 11,
+    "title": "Campus Photography Walk",
+    "date": "2027-04-10",
+    "category": "Community",
+    "location": "East Gate",
+    "description": "Explore the campus with the photography club and learn composition through practical activities.",
+    "registerLink": "register.html"
+  },
+  {
+    "id": 12,
+    "title": "Cloud Computing Fundamentals",
+    "date": "2027-04-18",
+    "category": "Workshop",
+    "location": "Innovation Hall",
+    "description": "Build a foundation in cloud services, deployment, and security with guided demonstrations.",
+    "registerLink": "register.html"
+  },
+  {
+    "id": 13,
+    "title": "Student Film Festival",
+    "date": "2027-04-25",
+    "category": "Community",
+    "location": "Open Air Theatre",
+    "description": "Watch original short films created by student directors, editors, and production teams.",
+    "registerLink": "register.html"
+  },
+  {
+    "id": 14,
+    "title": "Entrepreneurship Masterclass",
+    "date": "2027-05-06",
+    "category": "Career",
+    "location": "Business Block Stage",
+    "description": "Learn how founders validate ideas, understand customers, and prepare a practical first pitch.",
+    "registerLink": "register.html"
+  },
+  {
+    "id": 15,
+    "title": "Robotics Demonstration Expo",
+    "date": "2027-05-15",
+    "category": "Competition",
+    "location": "Student Center Auditorium",
+    "description": "See autonomous robots and student engineering prototypes in action during the annual expo.",
+    "registerLink": "register.html"
   }
 ]

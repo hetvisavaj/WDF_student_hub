@@ -26,5 +26,82 @@
     "program": "B.Tech Mechanical",
     "year": "4th Year",
     "status": "Active"
+  },
+  {
+    "id": "STU-105",
+    "name": "Kabir Singh",
+    "program": "B.Tech Civil Engineering",
+    "year": "2nd Year",
+    "status": "Active"
+  },
+  {
+    "id": "STU-106",
+    "name": "Ananya Iyer",
+    "program": "B.Tech Computer Science",
+    "year": "3rd Year",
+    "status": "Active"
+  },
+  {
+    "id": "STU-107",
+    "name": "Vikram Joshi",
+    "program": "B.Tech Information Technology",
+    "year": "4th Year",
+    "status": "Active"
+  },
+  {
+    "id": "STU-108",
+    "name": "Meera Kapoor",
+    "program": "B.Tech Electronics",
+    "year": "2nd Year",
+    "status": "Pending"
+  },
+  {
+    "id": "STU-109",
+    "name": "Aditya Rao",
+    "program": "B.Tech Mechanical",
+    "year": "1st Year",
+    "status": "Active"
+  },
+  {
+    "id": "STU-110",
+    "name": "Ishita Das",
+    "program": "B.Tech Civil Engineering",
+    "year": "3rd Year",
+    "status": "Active"
+  },
+  {
+    "id": "STU-111",
+    "name": "Arjun Malhotra",
+    "program": "B.Tech Computer Science",
+    "year": "4th Year",
+    "status": "Active"
+  },
+  {
+    "id": "STU-112",
+    "name": "Nisha Thomas",
+    "program": "B.Tech Information Technology",
+    "year": "1st Year",
+    "status": "Pending"
+  },
+  {
+    "id": "STU-113",
+    "name": "Dev Patel",
+    "program": "B.Tech Electronics",
+    "year": "3rd Year",
+    "status": "Active"
+  },
+  {
+    "id": "STU-114",
+    "name": "Tanya Bansal",
+    "program": "B.Tech Mechanical",
+    "year": "2nd Year",
+    "status": "Active"
+  },
+  {
+    "id": "STU-115",
+    "name": "Yash Kulkarni",
+    "program": "B.Tech Civil Engineering",
+    "year": "4th Year",
+    "status": "Pending"
   }
 ]

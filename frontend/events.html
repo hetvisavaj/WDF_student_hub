@@ -6,6 +6,7 @@
     <title>StudentHub - Events</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
@@ -41,6 +42,11 @@
                     <span>Category</span>
                     <select id="event-category-filter" aria-label="Filter events by category">
                         <option value="all">All Categories</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Career">Career</option>
+                        <option value="Seminar">Seminar</option>
+                        <option value="Community">Community</option>
+                        <option value="Competition">Competition</option>
                     </select>
                 </label>
 
@@ -57,6 +63,52 @@
             <div id="events-list" class="events-list" aria-live="polite"></div>
 
             <div class="pagination" id="event-pagination" aria-label="Event pagination"></div>
+
+            <section class="event-registration" aria-labelledby="registration-heading">
+                <h2 id="registration-heading">Event Registration</h2>
+                <form id="event-registration-form" action="http://localhost/PRACTICAL/event_register.php" method="post">
+                    <div class="form-group">
+                        <label for="event-name">Event Name:</label>
+                        <input type="text" id="event-name" name="event_name" placeholder="Enter the event name" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="attendee-name">Full Name:</label>
+                            <input type="text" id="attendee-name" name="attendee_name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="student-id">Student ID:</label>
+                            <input type="text" id="student-id" name="student_id" placeholder="e.g., STU-2026-001" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="event-date">Event Date:</label>
+                            <input type="date" id="event-date" name="event_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="event-type">Event Type:</label>
+                            <select id="event-type" name="event_type" required>
+                                <option value="">Select Event Type</option>
+                                <option value="Workshop">Workshop</option>
+                                <option value="Career">Career</option>
+                                <option value="Seminar">Seminar</option>
+                                <option value="Community">Community</option>
+                                <option value="Competition">Competition</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="attendee-email">Email Address:</label>
+                        <input type="email" id="attendee-email" name="attendee_email" placeholder="student@univ.edu" required>
+                    </div>
+
+                    <button type="submit">Register for Event</button>
+                </form>
+            </section>
         </section>
     </main>
 

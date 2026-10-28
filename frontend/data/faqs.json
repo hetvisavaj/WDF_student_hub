@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "question": " my portal password?",
+    "question": "How can I reset my portal password?",
     "answer": "Navigate to the Login page and choose the Forgot Password option to receive a reset link on your registered email.",
     "category": "Account"
   },
@@ -33,6 +33,90 @@
     "id": 6,
     "question": "Who should I contact for technical support?",
     "answer": "Use the Contact page or the IT support desk details listed in the portal to report system issues or login problems.",
+    "category": "Support"
+  },
+  {
+    "id": 7,
+    "question": "How do I access my course timetable?",
+    "answer": "Open the Academic Calendar or Dashboard page to view your latest class timetable and room updates.",
+    "category": "Academics"
+  },
+  {
+    "id": 8,
+    "question": "Where can I find important campus notices?",
+    "answer": "Campus notices are displayed on the Home page and in the Notices section of the student portal.",
+    "category": "General"
+  },
+  {
+    "id": 9,
+    "question": "How can I update my email address?",
+    "answer": "Open Profile, choose Edit Profile, update your email address, and submit the changes for verification.",
+    "category": "Profile"
+  },
+  {
+    "id": 10,
+    "question": "Are event registrations free for students?",
+    "answer": "Most campus events are free. Any registration fee or special requirement is shown on the event details.",
+    "category": "Events"
+  },
+  {
+    "id": 11,
+    "question": "What should I do if a page does not load?",
+    "answer": "Refresh the page and check your connection. For repeated problems, report the page and error to IT support.",
+    "category": "Support"
+  },
+  {
+    "id": 12,
+    "question": "Can I use the portal on a mobile phone?",
+    "answer": "Yes. StudentHub uses a responsive layout that supports current mobile and desktop browsers.",
+    "category": "General"
+  },
+  {
+    "id": 13,
+    "question": "How do I view my examination results?",
+    "answer": "Sign in and open the Results or Gradebook section to view published examination marks.",
+    "category": "Academics"
+  },
+  {
+    "id": 14,
+    "question": "How can I cancel an event registration?",
+    "answer": "Open the event registration confirmation and follow the cancellation instructions, or contact the event coordinator.",
+    "category": "Events"
+  },
+  {
+    "id": 15,
+    "question": "Who can help with course selection?",
+    "answer": "Contact your department advisor or use the Academic Advising inquiry form on the Home page.",
+    "category": "Academics"
+  },
+  {
+    "id": 16,
+    "question": "How can I download my fee receipt?",
+    "answer": "Open the Finance section of the portal, select your payment, and choose Download Receipt.",
+    "category": "Finance"
+  },
+  {
+    "id": 17,
+    "question": "Where can I see the academic calendar?",
+    "answer": "The latest academic calendar is available in the Notices and Academic Calendar section of the portal.",
+    "category": "Academics"
+  },
+  {
+    "id": 18,
+    "question": "How do I update my profile photo?",
+    "answer": "Go to Profile, select Edit Profile, upload a suitable photo, and save your changes.",
+    "category": "Profile"
+  },
+  {
+    "id": 19,
+    "question": "Can I register for more than one campus event?",
+    "answer": "Yes. You can register for multiple events as long as their schedules do not overlap.",
+    "category": "Events"
+  },
+  {
+    "id": 20,
+    "question": "How do I report incorrect information on the portal?",
+    "answer": "Use the Contact page to send the page name, incorrect detail, and any supporting information to the support team.",
     "category": "Support"
   }
 ]

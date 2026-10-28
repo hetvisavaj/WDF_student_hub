@@ -21,7 +21,7 @@
                     <li><a href="admin.html" class="active">Admin</a></li>
                     <li><a href="faq.html">FAQ</a></li>
                     <li><a href="profile.html">Profile</a></li>
-                    <li><a href="login.html">Logout</a></li>
+                    <li><a href="http://localhost/PRACTICAL/logout.php">Logout</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,39 +30,52 @@
         <section aria-labelledby="admin-heading">
             <h1 id="admin-heading">Administrator Console</h1>
             <h2>Registered Portal Users</h2>
-            
+            <p><a class="button-link" href="http://localhost/PRACTICAL/student_management.php">Open Student Management</a></p>
+            <p><a class="button-link" href="http://localhost/PRACTICAL/event_management.php">Manage Events</a></p>
+
+            <div class="data-toolbar">
+                <label class="search-box">
+                    <span class="sr-only">Search students</span>
+                    <input type="search" id="student-search" placeholder="Search students..." aria-label="Search students">
+                </label>
+                <label class="filter-box">
+                    <span>Status</span>
+                    <select id="student-status-filter" aria-label="Filter students by status">
+                        <option value="all">All statuses</option>
+                    </select>
+                </label>
+                <label class="sort-box">
+                    <span>Sort by</span>
+                    <select id="student-sort" aria-label="Sort students">
+                        <option value="id-asc">Student ID</option>
+                        <option value="name-asc">Name: A-Z</option>
+                        <option value="year-asc">Year</option>
+                    </select>
+                </label>
+            </div>
+
             <div class="table-wrapper">
                 <table>
-                    <caption>Active Accounts Overview</caption>
+                    <caption>Student Accounts Loaded from JSON</caption>
                     <thead>
                         <tr>
                             <th scope="col">User ID</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Role</th>
-                            <th scope="col">Actions</th>
+                            <th scope="col">Program</th>
+                            <th scope="col">Year</th>
+                            <th scope="col">Status</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>USR-01</strong></td>
-                            <td>Jane Student</td>
-                            <td><span class="role-badge role-student">Student</span></td>
-                            <td><button type="button" aria-label="Edit Jane Student">Edit</button></td>
-                        </tr>
-                        <tr>
-                            <td><strong>USR-02</strong></td>
-                            <td>Dr. Smith</td>
-                            <td><span class="role-badge role-faculty">Faculty</span></td>
-                            <td><button type="button" aria-label="Edit Dr. Smith">Edit</button></td>
-                        </tr>
-                    </tbody>
+                    <tbody id="student-list"></tbody>
                 </table>
             </div>
+            <div id="student-pagination" class="pagination" aria-label="Student pagination"></div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 StudentHub Academic Portal. All rights reserved.</p>
     </footer>
+    <script src="app.js"></script>
 </body>
 </html>
